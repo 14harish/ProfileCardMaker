@@ -14,7 +14,7 @@ useEffect(()=>{
 root.render(
   <div>{(typeof backendData.user==='undefined')?(
 <p>Loading...</p>):(backendData.user.map((user,i)=>{
-  <p></p>
+  <p key={i}>{user}</p>
 }))
 }
 </div>
