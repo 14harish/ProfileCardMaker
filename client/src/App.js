@@ -5,13 +5,12 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 
 function App() {
   const  [Username,SetUsername]=useState('');
-  const  [path,SetPath]=useState('');
+  const  [file,SetPath]=useState('');
   const  [age,SetAge]=useState('');
   
   const submitReview=()=>{
   // alert("hello");
-
-    Axios.post('http://localhost:8000/insert',{path:path,Username:Username,age:age}).then(()=>{
+    Axios.post('http://localhost:8000/insert',{path:file,Username:Username,age:age}).then(()=>{
       alert("Inserted");
     })
   };
@@ -19,8 +18,9 @@ function App() {
     <div className="App">
      <form>
       <label>Profile Photo:</label>
-      <input type="file" name='path' onChange={(e)=>{
-        SetPath(e.target.value)
+      <input type="file" name='file' onChange={(e)=>{
+        const file=e.target.files[0];
+        SetPath(file)
       }}/><br/>
       <label>Name:</label>
       <input type="text" name='Username' onChange={(e)=>{

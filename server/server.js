@@ -5,15 +5,10 @@ const body_parser=require('body-parser');
 const cors=require('cors');
 const multer =require('multer');
 const exp=express();
+
+
 const up=multer({
     dest:"./public",
-    fileFilter(req,file,cb){
-        if(file.originalname.endsWith('.png')){
-            cb(null,true);
-        }else{
-            cb("please upload image with ext .png",false);
-        }
-    }
 })
 const data=fs.readFileSync("data.json");
 // const myValue=JSON.parse(data);
@@ -24,9 +19,10 @@ exp.use(body_parser.urlencoded({extended:true}));
 // myValue.push(value);
 
 
-exp.post("/insert",up.single("profile"),(req,res)=>{
+exp.post("/insert",up.single("file"),(req,res)=>{
+    const file=req.file.path;
     let value={
-        profilePath:req.body.path,
+        profilePath:file,
         name:req.body.Username,
         age:req.body.age,
     }
