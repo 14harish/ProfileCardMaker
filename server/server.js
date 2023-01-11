@@ -7,18 +7,30 @@ const multer =require('multer');
 const exp=express();
 
 
-const up=multer();
-const data=fs.readFileSync("data.json");
+const data=fs.readFileSync("../client/src/data.json");
 // const myValue=JSON.parse(data);
 exp.use(cors());
 exp.use(express.json());
 exp.use(body_parser.urlencoded({extended:true}));
 
 // myValue.push(value);
+const storage=multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,'../client/src/image')
+    },
+    filename:(req,file,cb)=>{
+        cb(null,file.originalname);
+    }
+})
+
+const upload=multer({
+   dest:'../client/src/image',
+});
 
 
-exp.post("/insert",up.single("file"),(req,res)=>{
-    const file=req.file;
+
+exp.post("/insert",upload.single("file"),(req,res)=>{
+    const file=req.file.path;
     console.log(file);
     let value={
         profilePath:file,
@@ -26,7 +38,7 @@ exp.post("/insert",up.single("file"),(req,res)=>{
         age:req.body.age,
     }
     const val=JSON.stringify(value);
-    fs.writeFileSync("data.json",val,(err)=>{
+    fs.writeFileSync("../client/src/data.json",val,(err)=>{
         if (err) throw err;
         console.log("data added");
     })

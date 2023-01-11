@@ -10,17 +10,23 @@ function App() {
   
   const submitReview=()=>{
   // alert("hello");
-    Axios.post('http://localhost:8000/insert',{file:file,Username:Username,age:age}).then(()=>{
+    Axios.post('http://localhost:8000/insert',{file:file,Username:Username,age:age},{
+      headers:{
+        "Content-type":"multipart/form-data",
+      }
+    }).then(()=>{
       alert("Inserted");
     })
   };
+
   return (
     <div className="App">
-     <form>
+     <form encType="multipart/form-data">
       <label>Profile Photo:</label>
       <input type="file" name='file' onChange={(e)=>{
-        const file=e.target.files;
-        SetPath(file)
+        const file=e.target.files[0];
+        console.log(file);
+        SetPath(file);
       }}/><br/>
       <label>Name:</label>
       <input type="text" name='Username' onChange={(e)=>{
