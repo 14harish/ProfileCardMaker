@@ -1,11 +1,19 @@
 import React,{useEffect,useState} from 'react';
 import './App.css';
+import Axios from 'axios'
+
 
 function App() {
   const  [Username,SetUsername]=useState('');
   const  [path,SetPath]=useState('');
   const  [age,SetAge]=useState('');
-
+  
+  const submitReview=()=>{
+  // alert("hello");
+    Axios.post('http://localhost:8000/insert',{path:path,Username:Username,age:age}).then(()=>{
+      alert("Inserted");
+    })
+  };
   return (
     <div className="App">
      <form>
@@ -19,7 +27,8 @@ function App() {
       <label>Age:</label>
       <input type="text" name='age' onChange={(e)=>{
         SetAge(e.target.value)}}/><br/>
-      <input type="submit" value="submit"/>
+      {/* <input type="submit" value="submit"/> */}
+      <button onClick={submitReview}>submit</button>
      </form>
     </div>
   );

@@ -1,20 +1,24 @@
 const { json } = require('body-parser');
 const express=require('express');
 const fs=require('fs');
-
+const body_parser=require('body-parser');
+const cors=require('cors');
 const exp=express();
 
 const data=fs.readFileSync("data.json");
 // const myValue=JSON.parse(data);
-
+exp.use(cors());
+exp.use(express.json());
+exp.use(body_parser.urlencoded({extended:true}));
 
 // myValue.push(value);
 
-exp.get("/",(req,res)=>{
+
+exp.post("/insert",(req,res)=>{
     let value={
-        profilePath:path,
-        name:Username,
-        age:age,
+        profilePath:req.body.path,
+        name:req.body.Username,
+        age:req.body.age,
     }
     const val=JSON.stringify(value);
     fs.writeFileSync("data.json",val,(err)=>{
