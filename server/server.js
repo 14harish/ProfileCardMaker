@@ -2,7 +2,7 @@ const express=require('express');
 
 const exp=express();
 
-exp.use("/",(req,res)=>{
+exp.use("/api",(req,res)=>{
     res.json({'user':[user1]});
 })
 
