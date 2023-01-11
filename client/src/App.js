@@ -9,7 +9,7 @@ function App() {
   const  [age,SetAge]=useState('');
   
   const submitReview=()=>{
-  alert("hello");
+  // alert("hello");
     Axios.post('http://localhost:8000/insert',{file:file,Username:Username,age:age},{
       headers:{
         "Content-type":"multipart/form-data",

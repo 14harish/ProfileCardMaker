@@ -22,15 +22,18 @@ const storage=multer.diskStorage({
         cb(null,file.originalname);
     }
 })
+exp.use(express.static(__dirname + '../client/src/image'));
+exp.use('../client/src/image', express.static('image'));
 
 const upload=multer({
-   dest:'../client/src/image',
+//    dest:'../client/src/image',
+storage:storage
 });
 
 
 
 exp.post("/insert",upload.single("file"),(req,res)=>{
-    const file=req.file.path;
+    const file=req.file.originalname;
     console.log(file);
     let value={
         profilePath:file,
