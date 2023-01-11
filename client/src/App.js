@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import './App.css';
 import Axios from 'axios'
-
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 function App() {
   const  [Username,SetUsername]=useState('');
@@ -10,6 +10,7 @@ function App() {
   
   const submitReview=()=>{
   // alert("hello");
+
     Axios.post('http://localhost:8000/insert',{path:path,Username:Username,age:age}).then(()=>{
       alert("Inserted");
     })
@@ -28,7 +29,7 @@ function App() {
       <input type="text" name='age' onChange={(e)=>{
         SetAge(e.target.value)}}/><br/>
       {/* <input type="submit" value="submit"/> */}
-      <button onClick={submitReview}>submit</button>
+      <Link to="/card"><button onClick={submitReview}>submit</button></Link>
      </form>
     </div>
   );

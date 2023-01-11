@@ -24,7 +24,7 @@ exp.use(body_parser.urlencoded({extended:true}));
 // myValue.push(value);
 
 
-exp.post("/insert",up.single("path"),(req,res)=>{
+exp.post("/insert",up.single("profile"),(req,res)=>{
     let value={
         profilePath:req.body.path,
         name:req.body.Username,
