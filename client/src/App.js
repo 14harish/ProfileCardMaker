@@ -10,7 +10,7 @@ function App() {
   
   const submitReview=()=>{
   // alert("hello");
-    Axios.post('http://localhost:8000/insert',{path:file,Username:Username,age:age}).then(()=>{
+    Axios.post('http://localhost:8000/insert',{file:file,Username:Username,age:age}).then(()=>{
       alert("Inserted");
     })
   };
@@ -19,7 +19,7 @@ function App() {
      <form>
       <label>Profile Photo:</label>
       <input type="file" name='file' onChange={(e)=>{
-        const file=e.target.files[0];
+        const file=e.target.files;
         SetPath(file)
       }}/><br/>
       <label>Name:</label>

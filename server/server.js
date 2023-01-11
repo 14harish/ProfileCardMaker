@@ -7,9 +7,7 @@ const multer =require('multer');
 const exp=express();
 
 
-const up=multer({
-    dest:"./public",
-})
+const up=multer();
 const data=fs.readFileSync("data.json");
 // const myValue=JSON.parse(data);
 exp.use(cors());
@@ -20,7 +18,8 @@ exp.use(body_parser.urlencoded({extended:true}));
 
 
 exp.post("/insert",up.single("file"),(req,res)=>{
-    const file=req.file.path;
+    const file=req.file;
+    console.log(file);
     let value={
         profilePath:file,
         name:req.body.Username,
