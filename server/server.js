@@ -3,8 +3,18 @@ const express=require('express');
 const fs=require('fs');
 const body_parser=require('body-parser');
 const cors=require('cors');
+const multer =require('multer');
 const exp=express();
-
+const up=multer({
+    dest:"./public",
+    fileFilter(req,file,cb){
+        if(file.originalname.endsWith('.png')){
+            cb(null,true);
+        }else{
+            cb("please upload image with ext .png",false);
+        }
+    }
+})
 const data=fs.readFileSync("data.json");
 // const myValue=JSON.parse(data);
 exp.use(cors());
@@ -14,7 +24,7 @@ exp.use(body_parser.urlencoded({extended:true}));
 // myValue.push(value);
 
 
-exp.post("/insert",(req,res)=>{
+exp.post("/insert",up.single("path"),(req,res)=>{
     let value={
         profilePath:req.body.path,
         name:req.body.Username,
