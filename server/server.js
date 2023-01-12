@@ -38,7 +38,12 @@ exp.post("/insert",upload.single("file"),(req,res)=>{
     let value=[{
         profilePath:file,
         name:req.body.Username,
-        age:req.body.age,
+        profession:req.body.profession,
+        email:req.body.email,
+        phoneNo:req.body.phoneNo,
+        github:req.body.github,
+        linkedin:req.body.linkedin,
+        college:req.body.college,
     }];
     const val=JSON.stringify(value);
     fs.writeFileSync("../client/src/data.json",val,(err)=>{

@@ -29,14 +29,8 @@ function App() {
 
   return (
     <div className="App">
-     <form encType="multipart/form-data">
-
-      <label>Profile Photo:</label>
-      <input type="file" name='file' onChange={(e)=>{
-        const file=e.target.files[0];
-        console.log(file);
-        SetPath(file);
-      }}/><br/>
+     <form className='formData'>
+      <h1>Detail</h1>
       
       <label>Name:</label>
       <input type="text" name='Username' onChange={(e)=>{
@@ -66,8 +60,14 @@ function App() {
       <input type="text" name='linkedin' onChange={(e)=>{
         SetLinkedin(e.target.value)}}/><br/>
       
+        <label>Profile Photo:</label>
+        <input type="file" name='file' className='profile' onChange={(e)=>{
+          const file=e.target.files[0];
+          console.log(file);
+          SetPath(file);
+        }}/><br/>
       
-      <Link to="/card"><button onClick={submitReview}>submit</button></Link>
+      <Link to="/card"><button className='btn' onClick={submitReview}>Upload</button></Link>
      </form>
     </div>
   );
