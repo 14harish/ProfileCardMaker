@@ -16,13 +16,13 @@ exp.use(body_parser.urlencoded({extended:true}));
 // myValue.push(value);
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,'../client/src/image')
+        cb(null,'../client/public/upload')
     },
     filename:(req,file,cb)=>{
         cb(null,file.originalname);
     }
 })
-exp.use(express.static(__dirname + '../client/src/image'));
+exp.use(express.static(__dirname + '../client/public/upload'));
 exp.use('../client/src/image', express.static('image'));
 
 const upload=multer({
@@ -33,13 +33,13 @@ storage:storage
 
 
 exp.post("/insert",upload.single("file"),(req,res)=>{
-    const file=req.file.path;
+    const file="upload/"+req.file.originalname;
     console.log(file);
-    let value={
+    let value=[{
         profilePath:file,
         name:req.body.Username,
         age:req.body.age,
-    }
+    }];
     const val=JSON.stringify(value);
     fs.writeFileSync("../client/src/data.json",val,(err)=>{
         if (err) throw err;
