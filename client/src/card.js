@@ -4,18 +4,19 @@ import './card.css';
 
 function Card(){
     return(
-        <div className='fullCard'>{
+        <div className='fullCard'>{ 
             Data.map(data => {
                 return(
                     <div className='card'>
+                        <h1>Professional Card</h1>
                         <img src={data.profilePath} width="100px" height="100px"/>  
-                        <p>Name:{data.name}</p>
-                        <p>Profession:{data.profession}</p>
-                        <p>Email-Id:{data.email}</p>
-                        <p>Phone-No:{data.phoneNo}</p>
-                        <p>College/Company:{data.college}</p>
-                        <p>GitHub-Id:{data.github}</p>
-                        <p>linkedin-Id:{data.linkedin}</p>
+                        <p>Name:           <span>{data.name}</span></p>
+                        <p>Profession:     <span>{data.profession}</span></p>
+                        <p>Email-Id:       <span>{data.email}</span></p>
+                        <p>Phone-No:       <span>{data.phoneNo}</span></p>
+                        <p>College/Company:<span>{data.college}</span></p>
+                        <p>GitHub-Id:      <span>{data.github}</span></p>
+                        <p>linkedin-Id:    <span>{data.linkedin}</span></p>
                     </div>
                 )
         })

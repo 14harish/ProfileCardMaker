@@ -1,3 +1,30 @@
+ @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
+ @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
 .card{
+    width: 30%;
+    margin-left: 32%;
+    margin-top: 10%;
     border: 2px solid black;
+    /* padding-left: 50px; */
+    /* text-align: center; */
+}
+.card h1{
+    text-align: center;
+    padding-left: 15px;
+    font-family: 'Allerta Stencil', sans-serif;
+}
+.card p{
+    color: rgb(252, 1, 1);
+    padding-left: 90px;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+}
+.card span{
+    color: black;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: 'Michroma', sans-serif;
+}
+.card img{
+    padding-left: 150px;
 }
