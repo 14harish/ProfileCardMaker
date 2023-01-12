@@ -2,20 +2,15 @@
  @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Rubik+Vinyl&family=Sigmar+One&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap'); 
-body{
-    background: linear-gradient(yellow, rgb(29, 219, 219));
-    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
-    /* background-color: rgb(4, 243, 231); */
-}
-  .App{
-    /* background-color: aqua; */
-    position: absolute;
-    top:5%;
-    left:32%;
-}
+
+  body{
+    /* background-image: linear-gradient(red,yellow); */
+   /* background-color: aquamarine; */
+   }
 form h1{
     /* font-family: 'Rubik Vinyl', cursive; */
     font-family: 'Great Vibes', cursive;
+    /* position: absolute; */
     font-size:50px;
     margin-top: 10px;
     margin-left: 160px;
@@ -32,10 +27,13 @@ form .btn{
     border: 2px solid #24a0ed;
 }
 form{
+     position: absolute;
     /* background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44); */
     border: 2px solid black;
     border-radius:150px 0px;
     padding: 25px;
+    top: 6%;
+    left:30%;
     /* padding-left: 50px; */
 }
 label{
