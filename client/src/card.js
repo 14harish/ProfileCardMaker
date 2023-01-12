@@ -1,22 +1,19 @@
 import React from 'react';
 import Data from './data.json';
-// import Value from './image';
-// import pic from `./image/`+data.profilePath
-// import img from './harish.jpeg'
-// import img from './image'
+import './card.css';
+
 function Card(){
-    // console.log("Links "+data.profilePath);
     return(
-        <div>{
+        <div className='fullCard'>{
             Data.map(data => {
                 return(
-                    <div>
-                        <img src={data.profilePath}/>  
+                    <div className='card'>
+                        <img src={data.profilePath} width="100px" height="100px"/>  
                         <p>Name:{data.name}</p>
                     </div>
                 )
         })
-    }
+         }
         </div>
     )
 }

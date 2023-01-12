@@ -7,11 +7,18 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 function App() {
   const  [Username,SetUsername]=useState('');
   const  [file,SetPath]=useState('');
-  const  [age,SetAge]=useState('');
+  const  [profession,SetProfession]=useState('');
+  const  [email,SetEmail]=useState('');
+  const  [phoneNo,SetphoneNo]=useState('');
+  const  [github,Setgithub]=useState('');
+  const  [linkedin,SetLinkedin]=useState('');
+  const  [college,SetCollege]=useState('');
+   
   
   const submitReview=()=>{
   // alert("hello");
-    Axios.post('http://localhost:8000/insert',{file:file,Username:Username,age:age},{
+    Axios.post('http://localhost:8000/insert',
+    {file:file,Username:Username,profession:profession,email:email,phoneNo:phoneNo,github:github,linkedin:linkedin,college:college},{
       headers:{
         "Content-type":"multipart/form-data",
       }
@@ -23,19 +30,43 @@ function App() {
   return (
     <div className="App">
      <form encType="multipart/form-data">
+
       <label>Profile Photo:</label>
       <input type="file" name='file' onChange={(e)=>{
         const file=e.target.files[0];
         console.log(file);
         SetPath(file);
       }}/><br/>
+      
       <label>Name:</label>
       <input type="text" name='Username' onChange={(e)=>{
         SetUsername(e.target.value)}}/><br/>
-      <label>Age:</label>
-      <input type="text" name='age' onChange={(e)=>{
-        SetAge(e.target.value)}}/><br/>
-      {/* <input type="submit" value="submit"/> */}
+      
+      <label>Profession:</label>
+      <input type="text" name='profession' onChange={(e)=>{
+        SetProfession(e.target.value)}}/><br/>
+      
+      <label>Email:</label>
+      <input type="email" name='email' onChange={(e)=>{
+        SetEmail(e.target.value)}}/><br/>
+
+      <label>Phone-No:</label>
+      <input type="text" name='phoneNo' onChange={(e)=>{
+        SetphoneNo(e.target.value)}}/><br/>
+      
+      <label>College/Company:</label>
+      <input type="text" name='college' onChange={(e)=>{
+        SetCollege(e.target.value)}}/><br/>
+
+      <label>GitHub Id:</label>
+      <input type="text" name='github' onChange={(e)=>{
+        Setgithub(e.target.value)}}/><br/>
+      
+      <label>Linkedin Id:</label>
+      <input type="text" name='linkedin' onChange={(e)=>{
+        SetLinkedin(e.target.value)}}/><br/>
+      
+      
       <Link to="/card"><button onClick={submitReview}>submit</button></Link>
      </form>
     </div>
