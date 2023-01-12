@@ -33,7 +33,7 @@ storage:storage
 
 
 exp.post("/insert",upload.single("file"),(req,res)=>{
-    const file=req.file.originalname;
+    const file=req.file.path;
     console.log(file);
     let value={
         profilePath:file,

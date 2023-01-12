@@ -3,7 +3,7 @@ import data from './data.json';
 // import pic from `./image/`+data.profilePath
 // import img from './harish.jpeg'
 // import img from './image'
-function Card(){
+function Card({profilePath,name}){
     console.log("Links "+data.profilePath);
     return(<>
     
