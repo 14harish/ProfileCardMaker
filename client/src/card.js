@@ -1,8 +1,6 @@
 import React from 'react';
 import Data from './data.json';
 import './card.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 
 
 function Card(){
