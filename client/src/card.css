@@ -1,6 +1,9 @@
  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
-.card{
+body{
+    background-color: aquamarine;
+}
+ .card{
     /* color: aliceblue; */
     width: 30%;
     margin-left: 35%;
@@ -15,18 +18,6 @@
     text-align: center;
     padding-left: 15px;
     font-family: 'Allerta Stencil', sans-serif;
-}
-.card img{
-    /* padding-right: 100px; */
-    /* width: 100px; */
-    border: 2px solid black;
-    width: 100px;
-    height: 100px;
-    padding-right: -300px;
-    padding-left: -150px;
-    margin-left: 10px;
-    /* width: 100px; */
-    border-radius:4000px 4000px;
 }
 .card p{
      
