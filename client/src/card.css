@@ -2,11 +2,9 @@
  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
 .card{
     width: 30%;
-    margin-left: 32%;
-    margin-top: 10%;
+    margin-left: 35%;
+    margin-top: 8%;
     border: 2px solid black;
-    /* padding-left: 50px; */
-    /* text-align: center; */
 }
 .card h1{
     text-align: center;
@@ -14,17 +12,26 @@
     font-family: 'Allerta Stencil', sans-serif;
 }
 .card p{
-    color: rgb(252, 1, 1);
-    padding-left: 70px;
+     color: rgb(252, 1, 1); 
+    padding-left: 35px;
     font-size: 20px;
     font-family: 'Lobster', cursive;
 }
-.card span{
+.card #detail{
     color: black;
     padding-left: 10px;
     font-size: 15px;
     font-family: 'Michroma', sans-serif;
 }
+.card #icon{
+    font-size: 25px;
+    padding-right: 5px;
+}
 .card img{
     padding-left: 150px;
+}
+.card #h1Icon{
+    padding-top: 70px;
+    padding-left: 5px;
+    color: red;
 }
