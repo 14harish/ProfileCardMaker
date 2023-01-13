@@ -1,18 +1,18 @@
  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
-body{
-    background-color: aquamarine;
-}
+
  .card{
     /* color: aliceblue; */
+    color: rgb(61, 255, 242);
     width: 30%;
     margin-left: 35%;
-    margin-top: 8%;
+    margin-top: 6%;
     border: 2px solid black;
     border-radius: 50px 50px;
-    /* background-color: aquamarine; */
-    box-shadow:5px 5px 150px 10px black;
-    background-image: linear-gradient(rgb(119, 255, 0),rgb(3, 238, 255));
+    box-shadow:5px 5px 40px 10px rgb(23, 22, 22);
+    /* background: linear-gradient(rgb(0, 4, 72),rgb(59, 59, 185)); */
+    background-color: black;
+    /* background-image: linear-gradient(rgb(119, 255, 0),rgb(3, 238, 255)); */
 }
 .card h1{
     text-align: center;
@@ -20,18 +20,19 @@ body{
     font-family: 'Allerta Stencil', sans-serif;
 }
 .card p{
-     
+    color: rgb(0, 255, 221);
     padding-left: 35px;
     font-size: 20px;
     font-family: 'Lobster', cursive;
 }
 .card #detail{
-    color: black;
+    color: rgb(255, 240, 72);
     padding-left: 10px;
     font-size: 15px;
     font-family: 'Michroma', sans-serif;
 }
 .card #icon{
+    color: rgb(0, 255, 221);
     font-size: 25px;
     padding-right: 5px;
 }
@@ -41,5 +42,14 @@ body{
 .card #h1Icon{
     padding-top: 70px;
     padding-left: 5px;
-    /* color: red; */
+}
+.download{
+    margin-top: 80px;
+    font-family: 'Rubik Dirt', cursive;
+    border-radius: 10px 10px;
+    padding: 2px;
+    margin-left: 50px;
+    font-size: 20px;
+    color: #24a0ed;
+    border: 2px solid #24a0ed;
 }

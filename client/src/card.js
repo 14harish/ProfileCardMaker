@@ -28,30 +28,31 @@ function Card(){
     }
   
     return(
-        <div className='fullCard'>{ 
+        <div className='fullCard' ref={domEl}>{
+             
             Data.map(data => {
                 return(
                     <div className='card' >
-                        <button onClick={downloadImage}>Download Image</button>
-                        <div ref={domEl}>
+                       
+                        <div >
                         <h1>Professional Card<span id='h1Icon'><FaIdCardAlt/></span></h1>
                         <div className='image'>
                         <img src={data.profilePath} width="100px" height="100px"/>
                         </div>  
-                        <p><span id='icon'><BsFillPersonFill color='black'/></span>Name:<span id='detail'>{data.name}</span></p>
-                        <p><span id='icon'><HiAcademicCap color='black'/></span>Profession:<span id='detail'>{data.profession}</span></p>
-                        <p><span id='icon'><RiMailFill color='black'/></span>Email-Id:<span id='detail'>{data.email}</span></p>
-                        <p><span id='icon'><IoCall color='black'/></span>Phone-No:<span id='detail'>{data.phoneNo}</span></p>
-                        <p><span id='icon'><IoBusiness color='black'/></span>College/Company:<span id='detail'>{data.college}</span></p>
-                        <p><span id='icon'><AiFillGithub color='black'/></span>GitHub-Id:<span id='detail'>{data.github}</span></p>
-                        <p><span id='icon'><AiFillLinkedin color='black'/></span>linkedin-Id:<span id='detail'>{data.linkedin}</span></p>
-
+                        <p><span id='icon'><BsFillPersonFill/></span>Name:<span id='detail'>{data.name}</span></p>
+                        <p><span id='icon'><HiAcademicCap/></span>Profession:<span id='detail'>{data.profession}</span></p>
+                        <p><span id='icon'><RiMailFill/></span>Email-Id:<span id='detail'>{data.email}</span></p>
+                        <p><span id='icon'><IoCall/></span>Phone-No:<span id='detail'>{data.phoneNo}</span></p>
+                        <p><span id='icon'><IoBusiness /></span>College/Company:<span id='detail'>{data.college}</span></p>
+                        <p><span id='icon'><AiFillGithub/></span>GitHub-Id:<span id='detail'>{data.github}</span></p>
+                        <p><span id='icon'><AiFillLinkedin/></span>linkedin-Id:<span id='detail'>{data.linkedin}</span></p>
                         </div>
                         </div>
                     
-                )
-        })
-         }
+                    )
+                })
+            }
+            <button className='download' onClick={downloadImage}>Download Image</button>
         </div>
     )
 }
