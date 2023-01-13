@@ -20,7 +20,9 @@ function Card(){
                 return(
                     <div className='card'>
                         <h1>Professional Card<span id='h1Icon'><FaIdCardAlt/></span></h1>
-                        <img src={data.profilePath} width="100px" height="100px"/>  
+                        <div className='image'>
+                        <img src={data.profilePath}/>
+                        </div>  
                         <p><span id='icon'><BsFillPersonFill color='black'/></span>Name:<span id='detail'>{data.name}</span></p>
                         <p><span id='icon'><HiAcademicCap color='black'/></span>Profession:<span id='detail'>{data.profession}</span></p>
                         <p><span id='icon'><RiMailFill color='black'/></span>Email-Id:<span id='detail'>{data.email}</span></p>
