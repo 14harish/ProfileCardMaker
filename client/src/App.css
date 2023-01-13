@@ -28,9 +28,11 @@ form .btn{
     border: 2px solid #24a0ed;
 }
 form{
+    background: linear-gradient(rgb(9, 159, 9),rgb(148, 148, 4));
      position: absolute;
+     box-shadow: rgb(58, 149, 58) 20px 20px 90px 20px ;
     /* background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44); */
-    border: 2px solid black;
+    border: 2px solid rgb(6, 254, 84);
     border-radius:150px 0px;
     padding: 25px;
     top: 6%;
@@ -45,13 +47,16 @@ label{
     padding-left:10px;
 }
 input{
+    /* background: linear-gradient(rgb(64, 230, 64),rgb(176, 176, 35)); */
+    background-color: rgb(143, 242, 73);
     padding-left: 10px;
     align-items: center;
     font-family: 'Dongle', sans-serif;
     font-size:25px;
     font-weight: bold;
-    /* border: 1px solid black; */
-    border: none;
+    border: 1px solid green;
+    /* border: none; */
+    border-radius: 20px;
     margin: 10px;
 }
 @media screen and (max-width: 480px){
