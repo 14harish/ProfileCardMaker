@@ -1,6 +1,8 @@
 import React from 'react';
 import Data from './data.json';
 import './card.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 function Card(){
     return(
@@ -10,7 +12,7 @@ function Card(){
                     <div className='card'>
                         <h1>Professional Card</h1>
                         <img src={data.profilePath} width="100px" height="100px"/>  
-                        <p>Name:           <span>{data.name}</span></p>
+                        <p><FontAwesomeIcon icon="fa-solid fa-user"/>Name:<span>{data.name}</span></p>
                         <p>Profession:     <span>{data.profession}</span></p>
                         <p>Email-Id:       <span>{data.email}</span></p>
                         <p>Phone-No:       <span>{data.phoneNo}</span></p>
