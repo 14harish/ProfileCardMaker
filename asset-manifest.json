@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ProfileCardMaker/static/css/main.9c590862.css",
+    "main.js": "/ProfileCardMaker/static/js/main.3acbed82.js",
+    "index.html": "/ProfileCardMaker/index.html",
+    "main.9c590862.css.map": "/ProfileCardMaker/static/css/main.9c590862.css.map",
+    "main.3acbed82.js.map": "/ProfileCardMaker/static/js/main.3acbed82.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c590862.css",
+    "static/js/main.3acbed82.js"
+  ]
+}
