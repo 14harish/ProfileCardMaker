@@ -13,7 +13,6 @@ import * as htmlToImage from 'html-to-image';
 
 
 
-
 function Card(){
     
     const domEl = useRef(null);
