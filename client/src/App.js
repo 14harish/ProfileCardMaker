@@ -30,9 +30,9 @@ function App() {
 
   return (
     <div className="App">
+    <div className='container'>
      <form className='formData'>
       <h1>Detail</h1>
-      
       <label>Name:</label>
       <input type="text" name='Username' onChange={(e)=>{
         SetUsername(e.target.value)}}/><br/>
@@ -70,6 +70,7 @@ function App() {
       
       <Link to="/card"><button className='btn' onClick={submitReview}>Upload</button></Link>
      </form>
+    </div>
     </div>
   );
 }
