@@ -2,7 +2,7 @@
 // const express=require('express');
 // const fs=require('fs');
 // const body_parser=require('body-parser');
-// const cors=require('cors');
+const cors=require('cors');
 // const multer =require('multer');
 // const exp=express();
 
