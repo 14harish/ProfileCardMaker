@@ -18,7 +18,7 @@ function App() {
   
   const submitReview=()=>{
   // alert("hello");
-    Axios.post('http://localhost:8000/insert',
+    Axios.post('https://profileserver.onrender.com/insert',
     {file:file,Username:Username,profession:profession,email:email,phoneNo:phoneNo,github:github,linkedin:linkedin,college:college},{
       headers:{
         "Content-type":"multipart/form-data",
