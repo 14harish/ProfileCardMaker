@@ -1,4 +1,3 @@
-
 const cors = require("cors");
 
 const express = require("express");
@@ -6,8 +5,7 @@ const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
 const exp = express();
-const sizeOf = require('image-size');
-
+const sizeOf = require("image-size");
 
 const data = fs.readFileSync(path.join(__dirname, "../client/src/data.json"));
 const storage = multer.diskStorage({
@@ -31,9 +29,9 @@ exp.post("/insert", upload.single("file"), (req, res) => {
   const base64String = buffer.toString("base64");
   const fileName = req.file.originalname;
   const dimensions = sizeOf(req.file.buffer);
-  const format = dimensions.type
+  const format = dimensions.type;
 
-console.log(upload)
+  console.log(upload);
   const value = [
     {
       profilePath: fileName,
@@ -44,11 +42,12 @@ console.log(upload)
       github: req.body.github,
       linkedin: req.body.linkedin,
       college: req.body.college,
-      encode:base64String,
-      format:format
+      encode: base64String,
+      format: format,
+      des: req.body.des,
     },
   ];
-//   console.log(value);
+  //   console.log(value);
   const val = JSON.stringify(value);
   fs.writeFileSync(
     path.join(__dirname, "../client/src/data.json"),
