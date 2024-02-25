@@ -28,7 +28,8 @@ function App() {
     ) {
       console.log("dhe");
       Axios.post(
-        "http://localhost:8000/insert",
+        // "http://localhost:8000/insert",
+        "https://profileserver.onrender.com",
         {
           file: file,
           Username: Username,

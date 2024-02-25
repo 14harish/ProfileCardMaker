@@ -55,7 +55,7 @@ function Card() {
         localStorage.removeItem("theme");
         break;
     }
-  }, [theme,element.classList]);
+  }, [theme, element.classList]);
   return (
     <div class="h-screen w-screen sm:h-screen bg-green-50  dark:bg-gray-900   flex flex-wrap items-center  justify-center  ">
       <div className="fixed top-1 right-1 duration-100 dark:bg-gray-700 bg-green-50 rounded">
@@ -105,7 +105,7 @@ function Card() {
                 <h2 class="text-3xl font-bold">{data.name}</h2>
                 <a
                   class="mt-2 dark:hover:text-blue-500"
-                  href="https://www.instagram.com/immohitdhiman/"
+                  href=""
                   target="BLANK()"
                 >
                   @{data.profession}
