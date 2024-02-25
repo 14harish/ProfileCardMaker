@@ -1,5 +1,6 @@
-import Data from "./data.json";
+// import Data from "./data.json";
 import React, { useEffect, useState, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import * as htmlToImage from "html-to-image";
 
 function Card() {
@@ -11,6 +12,9 @@ function Card() {
     link.href = dataUrl;
     link.click();
   };
+  const location = useLocation();
+  const Data = location.state.data;
+
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
   );
@@ -103,13 +107,7 @@ function Card() {
             <div class=" ">
               <div class="text-center px-14">
                 <h2 class="text-3xl font-bold">{data.name}</h2>
-                <a
-                  class="mt-2 dark:hover:text-blue-500"
-                  href=""
-                  target="BLANK()"
-                >
-                  @{data.profession}
-                </a>
+                <a class="mt-2 dark:hover:text-blue-500">@{data.profession}</a>
                 <p class="mt-2 text-sm">{data.des}, </p>
               </div>
               <table class="text-s mt-2 ml-[10%] mb-2">

@@ -27,9 +27,9 @@ function App() {
       des
     ) {
       console.log("dhe");
-      await Axios.post(
-        // "http://localhost:8000/insert",
-        "https://profileserver.onrender.com/insert",
+      const res = await Axios.post(
+        "http://localhost:8000/insert",
+        // "https://profileserver.onrender.com/insert",
         {
           file: file,
           Username: Username,
@@ -46,9 +46,9 @@ function App() {
             "Content-type": "multipart/form-data",
           },
         }
-      ).then(() => {
-        Navigate("/card");
-      });
+      );
+      console.log(res);
+      Navigate("/card",{state:{data:res.data}});
     } else {
       alert("Fill the form");
     }

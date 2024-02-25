@@ -31,7 +31,7 @@ exp.post("/insert", upload.single("file"), (req, res) => {
   const dimensions = sizeOf(req.file.buffer);
   const format = dimensions.type;
 
-  console.log(upload);
+  // console.log(upload);
   const value = [
     {
       profilePath: fileName,
@@ -48,15 +48,15 @@ exp.post("/insert", upload.single("file"), (req, res) => {
     },
   ];
   console.log(value);
-  const val = JSON.stringify(value);
-  fs.writeFileSync(
-    path.join(__dirname, "../client/src/data.json"),
-    val,
-    (err) => {
-      if (err) throw err;
-      console.log("data added");
-    }
-  );
+  // const val = JSON.stringify(value);
+  // fs.writeFileSync(
+  //   path.join(__dirname, "../client/src/data.json"),
+  //   val,
+  //   (err) => {
+  //     if (err) throw err;
+  //     console.log("data added");
+  //   }
+  // );
 
   res.send(value);
 });
