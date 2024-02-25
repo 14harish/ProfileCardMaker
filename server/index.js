@@ -47,7 +47,7 @@ exp.post("/insert", upload.single("file"), (req, res) => {
       des: req.body.des,
     },
   ];
-  //   console.log(value);
+  console.log(value);
   const val = JSON.stringify(value);
   fs.writeFileSync(
     path.join(__dirname, "../client/src/data.json"),

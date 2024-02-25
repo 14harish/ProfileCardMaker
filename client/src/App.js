@@ -15,7 +15,7 @@ function App() {
   const [college, SetCollege] = useState("");
   const [des, Setdes] = useState("");
   const Navigate = useNavigate();
-  const submitReview = () => {
+  const submitReview = async () => {
     if (
       Username !== "" &&
       profession !== "" &&
@@ -27,9 +27,9 @@ function App() {
       des
     ) {
       console.log("dhe");
-      Axios.post(
+      await Axios.post(
         // "http://localhost:8000/insert",
-        "https://profileserver.onrender.com",
+        "https://profileserver.onrender.com/insert",
         {
           file: file,
           Username: Username,
@@ -46,8 +46,9 @@ function App() {
             "Content-type": "multipart/form-data",
           },
         }
-      );
-      Navigate("/card");
+      ).then(() => {
+        Navigate("/card");
+      });
     } else {
       alert("Fill the form");
     }
@@ -99,7 +100,7 @@ function App() {
         localStorage.removeItem("theme");
         break;
     }
-  }, [theme,element.classList]);
+  }, [theme, element.classList]);
   return (
     <div className="dark:bg-gray-900 bg-gray-300 h-screen sm:h-screen dark:text-white text-black">
       <div className="fixed right-1 duration-100 dark:bg-gray-800 bg-gray-300 rounded">
@@ -269,7 +270,7 @@ function App() {
           /> */}
           <div className="flex justify-center align-middle">
             <button
-              type="submit"
+              type="button"
               onClick={submitReview}
               class="text-white bg-blue-700  hover:bg-blue-800 focus:outline-none focus:ring-4  focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
